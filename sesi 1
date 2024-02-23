@@ -1,0 +1,102 @@
+1. Menghitung umur berdasarkan tahun lahir
+
+def hitung_umur(tahun_lahir):
+  """
+  Menghitung umur berdasarkan tahun lahir.
+
+  Args:
+    tahun_lahir: Tahun lahir (integer).
+
+  Returns:
+    Umur (integer).
+  """
+  tahun_sekarang = 2024
+  umur = tahun_sekarang - tahun_lahir
+  return umur
+
+# Contoh penggunaan
+tahun_lahir = int(input("Masukkan tahun lahir: "))
+umur = hitung_umur(tahun_lahir)
+print(f"Umur Anda adalah {umur} tahun.")
+
+
+2. Menghitung uang kembalian beradasarkan total belanja dan uang yang dibayarkan
+
+def hitung_kembalian(total_belanja, uang_dibayarkan):
+  """
+  Menghitung uang kembalian berdasarkan total belanja dan uang yang dibayarkan.
+
+  Args:
+    total_belanja: Total belanja (integer).
+    uang_dibayarkan: Uang yang dibayarkan (integer).
+
+  Returns:
+    Uang kembalian (integer).
+  """
+  kembalian = uang_dibayarkan - total_belanja
+  return kembalian
+
+# Contoh penggunaan
+total_belanja = int(input("Masukkan total belanja: "))
+uang_dibayarkan = int(input("Masukkan uang yang dibayarkan: "))
+kembalian = hitung_kembalian(total_belanja, uang_dibayarkan)
+print(f"Uang kembalian Anda adalah Rp{kembalian}.")
+
+
+3. Menghitung Jumlah yang harus dibayar di indomaret, dengan kondisi jika belanja lebih dari 60 ribu dapat diskon 10 ribu.
+
+def hitung_total_belanja(total_belanja):
+  """
+  Menghitung total belanja di Indomaret dengan diskon.
+
+  Args:
+    total_belanja: Total belanja sebelum diskon (integer).
+
+  Returns:
+    Total belanja setelah diskon (integer).
+  """
+  diskon = 10000 if total_belanja >= 60000 else 0
+  total_bayar = total_belanja - diskon
+  return total_bayar
+
+# Contoh penggunaan
+total_belanja = int(input("Masukkan total belanja: "))
+total_bayar = hitung_total_belanja(total_belanja)
+print(f"Total yang harus dibayar adalah Rp{total_bayar}.")
+
+
+4. Menghitung gaji (opsional) dengan kriteria:
+gaji_pokok = ?
+uang transport harian = 100.000/hari
+uang makan = 50.000/hari
+uang lembur = 2 jam pertama itu 100.000/jam, jam berikutnya 150.000/jam
+honor = gajipokok+totaltransport+totalmakan+upahlembur
+
+def hitung_gaji(gaji_pokok, jumlah_hari_kerja, lembur_1, lembur_2):
+  """
+  Menghitung gaji dengan kriteria yang diberikan.
+
+  Args:
+    gaji_pokok: Gaji pokok (integer).
+    jumlah_hari_kerja: Jumlah hari kerja (integer).
+    lembur_1: Jumlah jam lembur 2 jam pertama (integer).
+    lembur_2: Jumlah jam lembur setelah 2 jam pertama (integer).
+
+  Returns:
+    Gaji total (integer).
+  """
+  total_transport = jumlah_hari_kerja * 100000
+  total_makan = jumlah_hari_kerja * 50000
+  upah_lembur_1 = lembur_1 * 100000
+  upah_lembur_2 = lembur_2 * 150000
+  total_lembur = upah_lembur_1 + upah_lembur_2
+  gaji = gaji_pokok + total_transport + total_makan + total_lembur
+  return gaji
+
+# Contoh penggunaan
+gaji_pokok = int(input("Masukkan gaji pokok: "))
+jumlah_hari_kerja = int(input("Masukkan jumlah hari kerja: "))
+lembur_1 = int(input("Masukkan jumlah jam lembur 2 jam pertama: "))
+lembur_2 = int(input("Masukkan jumlah jam lembur setelah 2 jam pertama: "))
+gaji = hitung_gaji(gaji_pokok, jumlah_hari_kerja, lembur_1, lembur_2)
+print(f"Gaji total Anda adalah Rp{gaji}.")
