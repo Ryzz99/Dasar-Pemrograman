@@ -1,0 +1,100 @@
+1 a.
+# Meminta pengguna untuk memasukkan nilai
+nilai = float(input("Masukkan nilai Anda: "))
+
+# Memeriksa apakah nilai lebih besar dari 75
+if nilai > 75:
+    print("Selamat, Anda lulus!")
+else:
+    print("Maaf, Anda belum lulus.")
+b.
+# Meminta pengguna untuk memasukkan tahun lahir
+tahun_lahir = int(input("Masukkan tahun lahir Anda: "))
+
+# Memeriksa apakah tahun lahir lebih besar dari atau sama dengan 2000
+if tahun_lahir >= 2000:
+    print("Anda termasuk generasi Gen-Z.")
+else:
+    print("Anda bukan generasi Gen-Z.")
+
+2.
+nilai = int(input("Masukan Nilai : "))
+
+if nilai <=50:
+    hasil = "E"
+elif nilai <=60:
+    hasil = "D"
+elif nilai <=70:
+    hasil = "B"
+else:
+    hasil = "A"
+    
+    
+print(hasil)    
+
+3.
+def hitung_ipk():
+    # Daftar mata kuliah
+    matakuliah = ["Algoritma", "Perancangan Objek", "Kalkulus", "Etika Profesi", "Databases", "English"]
+    total_sks = 0
+    total_bobot = 0
+
+    # Meminta input nilai dan sks untuk setiap mata kuliah
+    for matkul in matakuliah:
+        nilai = float(input(f"Masukkan nilai untuk {matkul}: "))
+        sks = int(input(f"Masukkan jumlah SKS untuk {matkul}: "))
+
+        # Menghitung bobot nilai
+        if nilai >= 85:
+            bobot = 4
+        elif nilai >= 80:
+            bobot = 3.7
+        elif nilai >= 75:
+            bobot = 3.3
+        elif nilai >= 70:
+            bobot = 3
+        elif nilai >= 65:
+            bobot = 2.7
+        elif nilai >= 60:
+            bobot = 2.3
+        elif nilai >= 55:
+            bobot = 2
+        elif nilai >= 40:
+            bobot = 1
+        else:
+            bobot = 0
+
+        total_sks += sks
+        total_bobot += bobot * sks
+
+    # Menghitung IPK
+    ipk = total_bobot / total_sks
+
+    return ipk
+
+# Memanggil fungsi untuk menghitung IPK
+semester_ipk = hitung_ipk()
+print(f"IPK Anda untuk semester ini adalah: {semester_ipk}")
+
+4.
+nama = str(input("Masukan Nama : "))
+tempatLahir = str(input("Masukan Tempat Lahir : "))
+tanggalLahir = int(input("Masukan Tanggal Lahir : "))
+tahunLahir = int(input("Masukan Tahun Lahir : "))
+jenisKelamin = str(input("Masukan Jenis Kelamin Anda : "))
+nilaiEnglish = int(input("Masukan Nilai English : "))
+nilaiMtk = int(input("Masukan Nilai Matematika : "))
+nilaiIndo = int(input("Maasukan Nilai B.Indonesia : "))
+
+nilaiRataRata = (nilaiEnglish + nilaiMtk + nilaiIndo)/3
+
+if tahunLahir <1999: 
+    hasil = "Anda tidak diterima karena masalah umur"
+elif nilaiRataRata >=80 and jenisKelamin == "laki-laki":
+    hasil = "Anda  Diasarankan Masuk Teknik Informatika"
+elif nilaiRataRata >=80 and jenisKelamin == "perempuan":
+    hasil = "Anda Disarankan Masuk Sistem Informasi"
+else :
+    hasil = "Anda Disarankan Masuk DKV"
+   
+print(hasil)
